@@ -70,10 +70,7 @@ export default function Hero() {
           className="w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1920&q=80"
         >
-          <source
-            src="https://videos.pexels.com/video-files/2257010/2257010-uhd_2560_1440_30fps.mp4"
-            type="video/mp4"
-          />
+          <source src="/harbourline-hero.mp4" type="video/mp4" />
         </video>
       </div>
 
