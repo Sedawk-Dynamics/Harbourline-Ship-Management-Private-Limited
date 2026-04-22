@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A2647;
+  --color-navy-dark: #061630;
+  --color-navy-light: #0d3263;
+  --color-blue: #1B6B93;
+  --color-blue-light: #4BA3C7;
+  --color-gold: #D4A843;
+  --color-gold-light: #E8C876;
+  --color-green: #2E8B57;
+  --color-green-light: #3CB371;
+  --color-off-white: #F0F4F8;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  color: #2D3748;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+/* Hide default cursor on interactive elements (desktop) */
+@media (min-width: 769px) {
+  a, button, input, textarea, select, .service-card, .why-us-card, .product-card {
+    cursor: none;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-off-white); }
+::-webkit-scrollbar-thumb { background: var(--color-blue); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-navy); }
+
+/* Selection color */
+::selection {
+  background: rgba(27, 107, 147, 0.2);
+  color: var(--color-navy);
+}
+
+/* =====================================================
+   KEYFRAME ANIMATIONS
+   ===================================================== */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); opacity: 0.5; }
+  50% { transform: scaleY(1.2); opacity: 1; }
+}
+
+@keyframes preloaderPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes waveMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-25px); }
+}
+
+@keyframes scrollMouse {
+  0% { top: 8px; opacity: 1; }
+  100% { top: 22px; opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 15px rgba(37, 211, 102, 0.1); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10px, -10px) rotate(5deg); }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: var(--color-gold); }
+  50% { border-color: transparent; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 168, 67, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(212, 168, 67, 0.4); }
+}
+
+@keyframes slideInFromBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* =====================================================
+   COMPONENT STYLES
+   ===================================================== */
+
+/* Typing cursor blink */
+.typing-cursor {
+  border-right: 2px solid var(--color-gold);
+  padding-right: 4px;
+  animation: blink 0.8s infinite;
+}
+
+/* Products marquee track */
+.products-track {
+  display: flex;
+  gap: 24px;
+  animation: marquee 35s linear infinite;
+  width: max-content;
+}
+.products-track:hover {
+  animation-play-state: paused;
+}
+
+/* Wave SVG animations */
+.wave-1 { animation: waveMove 8s ease-in-out infinite; }
+.wave-2 { animation: waveMove 6s ease-in-out infinite reverse; }
+.wave-3 { animation: waveMove 10s ease-in-out infinite; }
+
+/* Service card ripple on click */
+.service-card {
+  position: relative;
+}
+.service-card:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(212, 168, 67, 0.3);
+  border-radius: 50%;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Smooth image zoom with overlay */
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Glowing border effect for contact info */
+.glow-border {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Gradient text helper */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth focus transitions on form inputs */
+input:focus, textarea:focus, select:focus {
+  transform: translateY(-1px);
+}
+
+/* Footer link hover underline */
+.footer-link-hover {
+  position: relative;
+}
+.footer-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.3s ease;
+}
+.footer-link-hover:hover::after {
+  width: 100%;
+}
