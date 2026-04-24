@@ -18,7 +18,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-14 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         {/* Header */}
         <motion.div
@@ -26,7 +26,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue uppercase tracking-[3px] mb-4">
             <motion.span
@@ -45,22 +45,22 @@ export default function Contact() {
               className="h-px bg-gold block"
             />
           </div>
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-navy mb-5">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 sm:mb-5">
             Contact <span className="text-blue">Us</span>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Have a question or need a quote? Reach out to us and our team will respond within 24 hours.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 sm:gap-12">
           {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -60, rotateY: 5 }}
             whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.8 }}
-            className="p-10 bg-gradient-to-br from-navy to-blue rounded-2xl text-white relative overflow-hidden"
+            className="p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-navy to-blue rounded-2xl text-white relative overflow-hidden"
           >
             <div className="absolute -top-1/2 -right-1/2 w-[300px] h-[300px] border border-gold/15 rounded-full" />
             <div className="absolute bottom-[-30%] left-[-20%] w-[200px] h-[200px] border border-white/5 rounded-full" />
@@ -229,7 +229,7 @@ export default function Contact() {
                   submitted
                     ? 'bg-gradient-to-br from-green to-green-light shadow-green/30'
                     : 'bg-gradient-to-br from-navy to-blue shadow-navy/30 hover:shadow-xl'
-                }`}
+                } w-full sm:w-auto justify-center`}
               >
                 {submitted ? (
                   <>

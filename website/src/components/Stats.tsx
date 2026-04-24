@@ -56,7 +56,7 @@ function StatCard({ item, inView }: { item: StatItem; inView: boolean }) {
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.3 } }}
-      className="text-center p-8 rounded-2xl bg-white/5 border border-white/8 hover:bg-white/10 transition-all group"
+      className="text-center p-5 sm:p-8 rounded-2xl bg-white/5 border border-white/8 hover:bg-white/10 transition-all group"
     >
       <motion.div
         whileHover={{ rotate: 360 }}
@@ -65,7 +65,7 @@ function StatCard({ item, inView }: { item: StatItem; inView: boolean }) {
       >
         {item.icon}
       </motion.div>
-      <div className="font-heading text-4xl lg:text-5xl font-bold text-white leading-none mb-2">
+      <div className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-none mb-2">
         <AnimatedNumber target={item.target} suffix={item.suffix} start={inView} />
       </div>
       <div className="text-xs text-gray-300 uppercase tracking-wider">{item.label}</div>
@@ -87,7 +87,7 @@ export default function Stats() {
   return (
     <section
       ref={ref}
-      className="py-20 bg-gradient-to-br from-navy to-navy-dark relative overflow-hidden"
+      className="py-14 sm:py-20 bg-gradient-to-br from-navy to-navy-dark relative overflow-hidden"
     >
       <div
         className="absolute -top-1/2 -right-[20%] w-[500px] h-[500px] border border-gold/10 rounded-full"
@@ -109,7 +109,7 @@ export default function Stats() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
         >
           {stats.map((s) => (
             <StatCard key={s.label} item={s} inView={inView} />

@@ -57,13 +57,13 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="Harbourline"
-            className={`transition-all duration-400 ${scrolled ? 'h-14' : 'h-20'}`}
+            className={`transition-all duration-400 ${scrolled ? 'h-10 sm:h-14' : 'h-12 sm:h-16 lg:h-20'}`}
           />
           <div className="flex flex-col">
-            <span className="font-heading text-xl font-bold text-navy tracking-wide leading-tight">
+            <span className="font-heading text-base sm:text-lg lg:text-xl font-bold text-navy tracking-wide leading-tight">
               HARBOURLINE
             </span>
-            <span className="text-[0.65rem] text-blue tracking-[3px] uppercase font-medium">
+            <span className="text-[0.55rem] sm:text-[0.65rem] text-blue tracking-[2px] sm:tracking-[3px] uppercase font-medium hidden sm:block">
               Ship Management
             </span>
           </div>

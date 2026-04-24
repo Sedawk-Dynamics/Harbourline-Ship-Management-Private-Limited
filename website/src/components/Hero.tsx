@@ -59,7 +59,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen min-h-[700px] overflow-hidden flex items-center">
+    <section id="home" className="relative h-screen min-h-[550px] sm:min-h-[650px] lg:min-h-[700px] overflow-hidden flex items-center">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -67,6 +67,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1920&q=80"
         >
@@ -75,7 +76,7 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-blue/70 to-navy/80 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy/60 via-blue/40 to-navy/55 z-[1]" />
 
       {/* Particles */}
       <div className="absolute inset-0 z-[1] overflow-hidden">
@@ -94,12 +95,12 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-[3] max-w-3xl pl-[5%] pr-5">
+      <div className="relative z-[3] max-w-3xl px-5 sm:pl-[5%] sm:pr-5" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 px-5 py-2 rounded-full text-gold-light text-sm font-medium tracking-wider uppercase mb-6"
+          className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-gold-light text-xs sm:text-sm font-medium tracking-wider uppercase mb-4 sm:mb-6"
         >
           <FaAnchor className="text-xs" />
           Trusted Maritime Partner
@@ -109,7 +110,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-5"
+          className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-4 sm:mb-5"
         >
           Powering the{' '}
           <span className="text-gold relative">
@@ -129,7 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-white/85 text-base sm:text-lg mb-8 max-w-xl"
+          className="text-white/85 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-xl"
         >
           Leading supplier of ship engine spares, marine machinery, and technical consulting services. Your one-stop solution for all maritime engineering needs.
         </motion.p>
@@ -142,7 +143,7 @@ export default function Hero() {
         >
           <button
             onClick={() => handleScroll('#services')}
-            className="inline-flex items-center gap-2.5 bg-gradient-to-br from-gold to-gold-light text-navy px-9 py-4 rounded-full font-bold text-sm tracking-wide shadow-lg shadow-gold/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/50 transition-all relative overflow-hidden group"
+            className="inline-flex items-center gap-2 sm:gap-2.5 bg-gradient-to-br from-gold to-gold-light text-navy px-6 py-3 sm:px-9 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-gold/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/50 transition-all relative overflow-hidden group"
           >
             <span className="relative z-10">Explore Services</span>
             <FaArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -150,7 +151,7 @@ export default function Hero() {
           </button>
           <button
             onClick={() => handleScroll('#contact')}
-            className="inline-flex items-center gap-2.5 border-2 border-white/40 text-white px-9 py-4 rounded-full font-semibold text-sm hover:border-white hover:bg-white/10 hover:-translate-y-1 transition-all"
+            className="inline-flex items-center gap-2 sm:gap-2.5 border-2 border-white/40 text-white px-6 py-3 sm:px-9 sm:py-4 rounded-full font-semibold text-xs sm:text-sm hover:border-white hover:bg-white/10 hover:-translate-y-1 transition-all"
           >
             <FaHeadset />
             Contact Us
@@ -162,7 +163,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-8 flex items-center gap-2.5"
+          className="mt-6 sm:mt-8 flex items-center gap-2.5"
         >
           <span className="text-white/50 text-sm">Specializing in:</span>
           <span className="text-gold-light font-semibold text-base typing-cursor min-h-[1.5em]">
@@ -172,7 +173,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Stats */}
-      <div className="absolute bottom-28 left-[5%] z-[3] hidden md:flex gap-10">
+      <div className="absolute bottom-20 sm:bottom-28 left-[5%] z-[3] hidden md:flex gap-6 lg:gap-10">
         {[
           { num: '500+', label: 'Products' },
           { num: '50+', label: 'Clients' },
@@ -186,7 +187,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 z-[3] flex flex-col items-center gap-2" style={{ animation: 'bounce 2s ease infinite' }}>
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 z-[3] hidden sm:flex flex-col items-center gap-2" style={{ animation: 'bounce 2s ease infinite' }}>
         <div className="w-6 h-10 border-2 border-white/40 rounded-full relative">
           <span
             className="absolute w-1 h-2 bg-gold rounded left-1/2 -translate-x-1/2"

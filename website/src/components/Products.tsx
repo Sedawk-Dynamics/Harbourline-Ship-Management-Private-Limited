@@ -33,14 +33,14 @@ export default function Products() {
   }, []);
 
   return (
-    <section id="products" className="py-24 bg-off-white relative">
+    <section id="products" className="py-14 sm:py-20 lg:py-24 bg-off-white relative">
       <div className="max-w-7xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue uppercase tracking-[3px] mb-4">
             <motion.span
@@ -59,10 +59,10 @@ export default function Products() {
               className="h-px bg-gold block"
             />
           </div>
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-navy mb-5">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 sm:mb-5">
             Marine <span className="text-blue">Products</span> Range
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Browse our extensive catalogue of marine engineering products sourced from world-class manufacturers.
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function Products() {
           {products.map((p) => (
             <div
               key={p.title}
-              className="product-card shrink-0 w-[280px] bg-white rounded-2xl p-7 text-center shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 hover:border-blue-light transition-all duration-300 group relative overflow-hidden"
+              className="product-card shrink-0 w-[220px] sm:w-[260px] lg:w-[280px] bg-white rounded-2xl p-5 sm:p-7 text-center shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 hover:border-blue-light transition-all duration-300 group relative overflow-hidden"
             >
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

@@ -39,14 +39,14 @@ const cardVariants = {
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 bg-white">
+    <section id="why-us" className="py-14 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue uppercase tracking-[3px] mb-4">
             <motion.span
@@ -65,10 +65,10 @@ export default function WhyUs() {
               className="h-px bg-gold block"
             />
           </div>
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-navy mb-5">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 sm:mb-5">
             The Harbourline <span className="text-blue">Advantage</span>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             We combine industry expertise with a commitment to quality, ensuring your vessels receive the best marine engineering solutions available.
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ export default function WhyUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           style={{ perspective: '1000px' }}
         >
           {items.map((item) => (
@@ -86,7 +86,7 @@ export default function WhyUs() {
               key={item.title}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.3 } }}
-              className="why-us-card p-8 rounded-2xl text-center bg-white border border-gray-100 hover:border-blue-light hover:shadow-2xl transition-all duration-400 relative overflow-hidden group"
+              className="why-us-card p-5 sm:p-6 lg:p-8 rounded-2xl text-center bg-white border border-gray-100 hover:border-blue-light hover:shadow-2xl transition-all duration-400 relative overflow-hidden group"
             >
               {/* Background fill on hover */}
               <div className="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-navy/[0.04] to-transparent group-hover:h-full transition-all duration-700" />

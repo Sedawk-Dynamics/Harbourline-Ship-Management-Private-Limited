@@ -22,9 +22,9 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-14 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -80, rotate: -2 }}
@@ -54,7 +54,7 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=800&q=80"
                 alt="Ship Engine Room"
-                className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[280px] sm:h-[350px] lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               {/* Shine overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -64,9 +64,9 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4, type: 'spring', stiffness: 200 }}
-              className="absolute -bottom-8 -right-5 bg-gradient-to-br from-gold to-gold-light text-navy p-6 rounded-2xl shadow-2xl text-center z-10"
+              className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-5 bg-gradient-to-br from-gold to-gold-light text-navy p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-2xl text-center z-10"
             >
-              <div className="font-heading text-5xl font-bold leading-none">10+</div>
+              <div className="font-heading text-3xl sm:text-5xl font-bold leading-none">10+</div>
               <div className="text-xs font-semibold uppercase tracking-wider mt-1">Years of<br />Excellence</div>
             </motion.div>
           </motion.div>
@@ -89,7 +89,7 @@ export default function About() {
               About Us
               <span className="w-8 h-px bg-gold" />
             </motion.div>
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-navy mb-5">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 sm:mb-5">
               Your Trusted Partner in <span className="text-blue">Maritime Engineering</span>
             </h2>
             <motion.p
